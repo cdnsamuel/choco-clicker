@@ -1,0 +1,281 @@
+:root {
+    /* Pallette */
+    --background-color: rgba(20, 33, 61); /* #252525 */
+    --primary-color: rgba(252, 163, 17); /* #fca311 */
+    --secondary-color: rgba(37, 37, 37); /* #14213D */
+    --text-color: rgba(229, 229, 229); /* #e5e5e5*/
+    /*Transparent ones*/
+    --background-shade: rgba(229, 229, 229, .1); /* #e5e5e5*/
+    --background-overlay: rgba(37, 37, 37, .7); /* #14213D */
+    --pulse: rgba(252, 163, 17, 0.02); /* #fca311 */
+    /* Typos  */
+    --font-primary: 'Luckiest Guy', cursive;
+    --font-secondary: 'Titillium Web', sans-serif;
+    /* Sizes */
+    --space: 0.5em;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+html, body {
+    height: 100%;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-color);
+    font-family: var(--font-secondary);
+    height: 90%;
+}
+header {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    font-family: var(--font-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+}
+
+.logo {
+    height: 100%;
+}
+.bakery {
+    padding: .7em .7em;
+    margin-right: 1em;
+    background-image: linear-gradient(var(--background-color), rgb(82, 82, 116));
+    color: var(--primary-color); 
+    border: solid 0.2em;
+    border-radius: 15px;
+    font-family: var(--font-primary);
+    font-size: 1.2em;
+    height: 80%;
+    display:flex;
+    align-items: center;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: var(--background-overlay);
+}
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+    border: .1em solid var(--primary-color);
+    box-shadow: 0 0 .6em .2em var(--primary-color);
+    padding: 1em;
+    text-align: center;
+}
+.popup-close {
+    font-size: 2em;
+    color: var(--text-color);
+    align-self: flex-end;
+}
+.popup-title {
+    font-family: var(--font-primary);
+    font-size: 1.5em;
+    color: var(--primary-color);
+}
+.popup-input {
+    background-color: var(--background-shade);
+    color: var(--text-color);
+    border: none;
+    border-radius: .5em;
+    font-family: var(--font-secondary);
+    font-size: 1em;
+    margin: .5em;
+    padding: .5em;
+    text-align: center;
+}
+.popup-input:focus {
+    outline: none;
+    box-shadow: 0 0 .2em .1em var(--primary-color);
+}
+.popup-submit {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: .5em;
+    font-family: var(--font-secondary);
+    font-size: 1em;
+    margin: .5em;
+    text-align: center;
+    padding: .2em;
+}
+.hidden {
+    display: none;
+}
+::-webkit-scrollbar {
+    background-color: #252525;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #fca311;
+    border-radius: 5px;
+}
+
+.item-box {
+    background-color: var(--background-shade);
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom:1.5em;
+    overflow: hidden;
+    overflow-x: scroll;
+    max-width: 100%;
+ }
+
+.item {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    margin: 0.5em;
+    padding: 1em 0.5em;
+    border-radius: 10px;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 9.5em;
+    font-size: 1.1em;       
+}
+
+.item-name{
+    font-size: 1.4rem;
+    font-family:'Luckiest Guy', cursive;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.item-price {
+    margin-top: 0.5em;
+    padding: 0.3em 1em;
+    background-image: linear-gradient(grey, white);
+    color: var(--background-color);
+    border-radius: 10px;
+    border: solid 0.1px;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    min-width: 7.5em; 
+}
+
+.message-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-shade);
+    height: 4em;
+    width: 90%;
+    border-radius: 15px;
+}
+.choco-message {
+    color: var(--text-color);
+    text-align: center;
+    max-width: 90%;
+    font-size: 1.1em;
+}
+.choco-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: space-between;
+    box-sizing: content-box;
+}
+.choco {
+    /* width: clamp(15em, 50%, 40em); */
+    width: 70%;
+    border-radius: 50%;
+    cursor: pointer;
+    filter: drop-shadow(0 0 .3em var(--primary-color));
+    animation: tilt 3s infinite;
+}
+.choco:hover {
+    animation: none;
+}
+/*Keyframes*/
+@keyframes tilt {
+    0% {
+        transform: translateX(0);
+    } 3% {
+        transform: translateX(-0.3em);
+    } 6% {
+        transform: translateX(0.3em);
+    } 9% {
+        transform: translateX(-0.3em);
+    } 12% {
+        transform: translateX(0.3em);
+    } 15% {
+        transform: translateX(0);
+    }
+}
+.score {
+    background-color: var(--background-shade);
+    color: var(--text-color);
+    font-family: var(--font-primary);
+    width: 50%;
+    height: 3em;
+    line-height: 3em;
+    text-align:  center;
+    border-radius: 1em;
+    margin-bottom: 2em;
+}
+
+
+@media screen and (min-width: 768px) {
+
+main {
+    flex-direction: row;
+    align-items: flex-start;
+    height: 90vh;
+}
+.choco-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
+.item-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    overflow: hidden;
+    overflow-y: scroll; 
+    height: 100%;
+    margin-bottom: 0; 
+}
+.item{
+    width: 80%;
+}
+.choco{
+    width: clamp(15em, 50%, 40em); 
+}
+.message-box{
+    height:5em;
+}
+.choco-message {
+    width: 85%;
+    font-size: 1.5em;
+}
+.score{
+    font-size: 1.5em;
+}
+/* Modifier scrollbar */
+} 

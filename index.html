@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="src/choco.webp" type="image/x-icon">
+    <title>Choco Clicker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Titillium+Web&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img class="logo" src="src/logo-color (1).png" alt="Logo du site">
+        <button class="bakery">Bakery Name</button>
+    </header>
+    <main>
+    <section class="item-box"></section>
+  
+    <section class="choco-container">
+        <div class="message-box">
+            <div class="choco-message">Tu veux des Chocolatines ? <br/>Il suffit de cliquer !</div>
+        </div>
+        <img id="choco" class="choco" src="src/choco.webp" alt="Bouton Chocolatine">
+        <div id="score" class="score" ><span></span> Chocolatines</div>
+    </section>
+    </main>
+    <div class="popup hidden">
+        <label class="popup-title">Choose your name</label>
+        <input class="popup-input" type="text" placeholder="Bakery Name" minlength="3" maxlength="12" required/>
+        <button class="popup-submit" type="submit">Submit</button>
+    </div>
+    <div class="overlay hidden"></div>
+    <script src="script/script.js"></script>
+</body>
+</html>
